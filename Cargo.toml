@@ -1,0 +1,42 @@
+[package]
+name = "remake"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+lto = true
+panic = "abort"
+codegen-units = 1
+
+[dependencies]
+anyhow = { version = "1.0.75", features = ["backtrace"] }
+axum = "0.6.20"
+axum-server = { version = "0.5.1", features = ["tls-rustls"] }
+bytes = "1.5.0"
+chrono = "0.4.31"
+cidr-utils = "0.5.11"
+clap = { version = "4.1.11", features = ["derive"] }
+ctrlc = "3.4.1"
+data-encoding = "2.5.0"
+fern = { version = "0.6.2", features = ["colored"] }
+futures = "0.3.29"
+glob = "0.3.1"
+hyper = "0.14.27"
+hyperlocal = "0.8.0"
+itertools = "0.11.0"
+lazy_static = "1.4.0"
+libc = "0.2.151"
+log = "0.4.20"
+once_cell = "1.18.0"
+pnet = "0.34.0"
+rand = "0.8.5"
+rayon = "1.8.0"
+reqwest = { version = "0.11.22", default-features = false, features = ["rustls-tls", "stream", "json"] }
+ring = "0.17.7"
+rtnetlink = "0.13.1"
+serde = { version = "1.0.189", features = ["derive"] }
+serde_json = "1.0.107"
+serde_yaml = "0.9.25"
+tokio = { version = "1.33.0", features = ["macros", "fs", "sync", "rt-multi-thread", "time"] }
+url = "2.4.1"
